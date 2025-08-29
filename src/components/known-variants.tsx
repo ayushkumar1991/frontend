@@ -178,7 +178,8 @@ export default function KnownVariants({
 
       pdf.setFontSize(9);
       pdf.text(
-       `Page ${pdf.getNumberOfPages()}`,
+       // Corrected: getNumberOfPages is on the 'internal' property
+       `Page ${pdf.internal.getNumberOfPages()}`,
         pageWidth - marginX,
         pageHeight - 20,
         { align: "right" }
